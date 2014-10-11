@@ -15,3 +15,21 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/test', function(){
+
+});
+
+// Route::group(array('prefix' => 'settings', 'before' => 'auth'), function()
+// {
+//     Route::get('/profile', array('as' => 'profile', 'uses' => 'UserController@profile'));
+//     // Route::post('/profile/save', array('as' => 'profile/save', 'uses' => 'SettingController@save'));
+    
+// });
+
+Route::group(array('prefix' => 'settings'), function()
+{
+    Route::get('/profile', array('as' => 'profile', 'uses' => 'UserController@profile'));
+    // Route::post('/profile/save', array('as' => 'profile/save', 'uses' => 'SettingController@save'));
+    
+});
