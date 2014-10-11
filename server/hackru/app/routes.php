@@ -33,3 +33,7 @@ Route::group(array('prefix' => 'settings'), function()
     // Route::post('/profile/save', array('as' => 'profile/save', 'uses' => 'SettingController@save'));
     
 });
+
+Route::resource('photo', 'UserController');
+
+Route::get('/courses', array('as'=>'courses', 'uses'=>'PageController@loadCourseSelection'));
