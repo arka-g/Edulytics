@@ -63,9 +63,7 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
+
                         <li>
                             <a class="active" href='{{URL::action("courses")}}'>Courses</a>
                         </li>
