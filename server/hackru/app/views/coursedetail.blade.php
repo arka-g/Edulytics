@@ -87,8 +87,12 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
 					
-				        <p> Type of Assessment 
-                             <input type="text" name="assessment">
+                        <p> Type of Assessment 
+                            <select>
+                                @foreach ($assessments as $assessment)
+                                    <option value="{{$assessment->assessment_type}}">{{$assessment->assessment_type}}</option>
+                                @endforeach
+                            </select>
                         </p>
                         <form> 
                             Grade: 

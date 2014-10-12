@@ -42,6 +42,7 @@ Route::group(array('prefix' => 'courses'), function()
 	Route::get('/{course}/grades', array('uses'=>'PageController@loadCoursePage'));	
 	Route::get('/assessment/{course}', array('uses' => 'PageController@loadAssessment'));
 });
+Route::post('/assessment/save1', array('as'=>'assessment-add','uses'=>'PageController@addAssessment'));
 
 Route::get('/assessment/{course}', array('uses' => 'PageController@loadAddGrade'));
 Route::get('/markweight', array('uses' => 'UserController@loadCourseMarkAndWeight'));

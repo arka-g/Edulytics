@@ -9,4 +9,6 @@ class Assessment extends \Eloquent {
 	 * @var string
 	 */
 	protected $table = 'assessment';
+	public $timestamps = false;
+
 }

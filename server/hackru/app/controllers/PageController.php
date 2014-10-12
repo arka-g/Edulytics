@@ -39,7 +39,7 @@ class PageController extends \BaseController {
 	public function addAssessment()
 	{
 		$input = Input::all();
-
+		//return $input;
 		$assessment = new Assessment;
 
 		$assessment->weight_percent = $input['weight'];
@@ -78,7 +78,7 @@ class PageController extends \BaseController {
 	{
 		$assessment = $this->loadAssessment($course);
 
-		return View::make('addassessmentpage', array('assessments' => $assessment));
+		return View::make('addassessmentpage', array('assessments' => $assessment,'course'=>$course));
 	}
 
 

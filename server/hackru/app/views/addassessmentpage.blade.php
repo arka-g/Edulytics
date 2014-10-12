@@ -92,20 +92,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
-					
-						<p> Type of Assessment 
-							<select>
-								@foreach ($assessments as $assessment)
-									<option value="{{$assessment->assessment_type}}">{{$assessment->assessment_type}}</option>
-								@endforeach
-							</select>
-						</p>
-						<form> 
+					{{ Form::open(array('url' => 'assessment/save1')) }}
+                    <input type = "hidden" name="course" value = "{{$course}}">
+			             <p> Type of Assessment 
+                             <input type="text" name="type">
+                        </p>
 							Weight: 
 							<input type="number" name="weight" min="0" max="100">
 							<input type="submit" value="Submit" >
-						</form>
-					
+					{{ Form::close() }}
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
