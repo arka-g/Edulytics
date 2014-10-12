@@ -112,7 +112,9 @@
                     <div class = "well">
                         <ul name = "user">
                         @foreach($usercourse as $user)
-                            <li value = "{{$user->id}}">{{$user->course->course_name}}</li>
+                            <li value = "{{$user->id}}">
+                                <a href = '/assessment/{{$user->course_id}}'>{{$user->course->course_name}}</a>
+                            </li>
                         @endforeach
                     </ul>
                     </div>

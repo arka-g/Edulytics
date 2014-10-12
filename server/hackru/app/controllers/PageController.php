@@ -52,7 +52,8 @@ class PageController extends \BaseController {
 
 	public function loadAssessment($course)
 	{
-		return Assessment::where('course_id', '=', $course)->get();
+		$Assessment = Assessment::where('course_id', '=', $course)->get();
+		return $Assessment;
 	}
 
 	public function addGrade()
