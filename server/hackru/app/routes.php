@@ -41,13 +41,17 @@ Route::group(array('prefix' => 'courses'), function()
 	Route::get('/', array('as'=>'courses', 'uses'=>'PageController@loadCourseSelection'));
 	Route::post('/save', array('as' => 'courses-add', 'uses' => 'PageController@saveCourseSelection'));
 	Route::get('/{course}/grades', array('uses'=>'PageController@loadCoursePage'));	
+	Route::get('/assessment/{course}', array('uses' => 'PageController@loadAssessment'));
+	// Route::get('/assessment/new', array('uses' => 'PageController@test'));
 });
 
-Route::get('/courses', array('as'=>'courses', 'uses'=>'PageController@loadCourseSelection'));
-Route::post('/courses/save', array('as' => 'courses-add', 'uses' => 'PageController@saveCourseSelection'));
-Route::get('/courses/{course}/grades', array('uses'=>'PageController@loadCoursePage'));
+Route::get('/assessment/{course}', array('uses' => 'PageController@loadAddGrade'));
+
+// Route::get('/courses', array('as'=>'courses', 'uses'=>'PageController@loadCourseSelection'));
+// Route::post('/courses/save', array('as' => 'courses-add', 'uses' => 'PageController@saveCourseSelection'));
+// Route::get('/courses/{course}/grades', array('uses'=>'PageController@loadCoursePage'));
 // Route::post('/course/assessment/add', array('as' => 'assessment-add', 'uses' => 'PageController@'))
 
 
 
-// Route::get('/d3Test', array('as'=>'d3Test', 'uses'=>'PageController@d3Test'));
+

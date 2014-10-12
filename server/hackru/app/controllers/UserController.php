@@ -85,7 +85,6 @@ class UserController extends \BaseController {
 
 	public function profile()
 	{
-		// return "TEST";
 		return User::find(1)->userAssessmentGrade()->get();
 	}
 

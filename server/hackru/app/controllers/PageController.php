@@ -2,6 +2,8 @@
 
 class PageController extends \BaseController {
 
+	public $userId = 1;
+
 	public function loadCourseSelection()
 	{
 		$courses = Course::all();
@@ -16,18 +18,14 @@ class PageController extends \BaseController {
 		$userCourse = new UserCourse;
 
 		$userCourse->course_id = $input['course'];
-		$userCourse->user_id = 1;
+		$userCourse->user_id = $this->userId;
 
 		$userCourse->save();
 	}
 
-	public function d3Test()
-	{
-		return View::make('d3');
-	}
-
 	public function loadCoursePage($course)
 	{
+		return View::make('coursedetail', array('course' => $course));
 		return $course;
 	}
 
@@ -35,13 +33,46 @@ class PageController extends \BaseController {
 	{
 		$input = Input::all();
 
-		// $userAssessmentGrade = new UserAssessmentGrade;
+		$assessment = new Assessment;
 
-		// $userAssessmentGrade->assessment_id = 
-		// $userAssessmentGrade->mark = 
-		// $userAssessmentGrade->user_id = 
+		$assessment->weight_percent = $input['weight'];
+		$assessment->assessment_type = $input['type'];
+		//This should come from the course eg hidden input
+		$assessment->course_id = $input['course'];
 
-		// $userAssessmentGrade->save();
+		$assessment->save();
 	}
+
+	public function loadAssessment($course)
+	{
+		return Assessment::where('course_id', '=', $course)->get();
+	}
+
+	public function addGrade()
+	{
+		$input = Input::all();
+
+		$userAssessmentGrade = new UserAssessmentGrade;
+
+		$userAssessmentGrade->assessment_id = $input['assessment'];
+		$userAssessmentGrade->mark = $input['mark'];
+		$userAssessmentGrade->user_id = $this->userId;
+
+		$userAssessmentGrade->save();
+	}
+
+	public function editAssessment()
+	{
+
+	}
+
+	public function loadAddGrade($course)
+	{
+		$assessment = $this->loadAssessment($course);
+
+		return View::make('addassessmentpage', array('assessments' => $assessment));
+	}
+
+
 
 }
