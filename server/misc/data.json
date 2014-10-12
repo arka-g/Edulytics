@@ -1,0 +1,44 @@
+[
+    {
+      "username":"kevin",
+      "label": "apples",
+      "n": 0.6
+    },
+    {
+      "username":"ken",
+      "label": "oranges",
+      "n": 0.7
+    },
+    {
+    		"username":"kn",
+      "label": "bananas",
+      "n": 0.8
+    },
+    {
+      "username":"k",
+      "label": "plums",
+      "n": 0.4
+    },
+        {
+          "username":"in",
+      "label": "apples",
+      "n": 0.6
+    },
+    {
+      "username":"kevidsadn",
+      "label": "orandss",
+      "n": 0.7
+    },
+    {
+      "username":"n",
+      "label": "banas",
+      "n": 0.8
+    },
+    {
+      "username":"in",
+      "label": "pms",
+      "n": 0.4
+    }
+
+
+]
