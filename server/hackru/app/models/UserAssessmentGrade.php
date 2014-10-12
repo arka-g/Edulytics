@@ -19,4 +19,6 @@ class UserAssessmentGrade extends \Eloquent {
     {
     	return $this->hasOne('User', 'id', 'user_id');
     }
+    	public $timestamps = false;
+
 }

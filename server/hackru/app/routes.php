@@ -40,6 +40,7 @@ Route::group(array('prefix' => 'courses'), function()
 	Route::get('/', array('as'=>'courses', 'uses'=>'PageController@loadCourseSelection'));
 	Route::post('/save', array('as' => 'courses-add', 'uses' => 'PageController@saveCourseSelection'));
 	Route::get('/{course}/grades', array('uses'=>'PageController@loadCoursePage'));	
+	Route::post('/save2', array('as' => 'grades-add', 'uses' => 'PageController@addGrade'));
 	Route::get('/assessment/{course}', array('uses' => 'PageController@loadAssessment'));
 });
 

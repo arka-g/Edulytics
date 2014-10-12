@@ -23,6 +23,8 @@ class PageController extends \BaseController {
 		$userCourse->user_id = $this->userId;
 
 		$userCourse->save();
+
+		return Redirect::to('/courses');
 	}
 
 	public function loadUserCourseSelection(){
@@ -70,6 +72,8 @@ class PageController extends \BaseController {
 		$userAssessmentGrade->user_id = $this->userId;
 
 		$userAssessmentGrade->save();
+
+		return Redirect::to('/courses');
 	}
 
 	public function editAssessment()

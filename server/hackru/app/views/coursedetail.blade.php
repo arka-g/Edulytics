@@ -85,16 +85,18 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
-					{{ Form::open(array('url' => 'courses/save')) }}
+                        {{ Form::open(array('url' => 'courses/save2')) }}
+
                         <p> Type of Assessment 
-                            <select>
+                            <select name="assessment">
                                 @foreach ($assessment as $assessments)
                                     <option value="{{$assessments->assessment_type}}">{{$assessments->assessment_type}}</option>
                                 @endforeach
                             </select>
                         </p>
+
                             Grade: 
-                            <input type="text" name="Grade" min="0" max="100">
+                            <input type="text" name="mark" min="0" max="1">
                             <input type="submit" value="Submit" >
 				    {{ Form::close() }}
 
