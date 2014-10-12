@@ -7,8 +7,10 @@ class PageController extends \BaseController {
 	public function loadCourseSelection()
 	{
 		$courses = Course::all();
+		$userCourse = UserCourse::with(array('course'))->where('user_id','=',1)->get();
+		//return $userCourse;
 		
-		return View::make('courses', array('courses' => $courses));
+		return View::make('courses', array('courses' => $courses,'usercourse' => $userCourse));
 	}
 
 	public function saveCourseSelection()
@@ -21,6 +23,11 @@ class PageController extends \BaseController {
 		$userCourse->user_id = $this->userId;
 
 		$userCourse->save();
+	}
+
+	public function loadUserCourseSelection(){
+
+		return View::make('usercourse', array('usercourse' => $userCourse));
 	}
 
 	public function loadCoursePage($course)

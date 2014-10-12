@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">Grades</a>
             </div>
 
             <!-- /.navbar-top-links -->
@@ -87,15 +87,14 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
 					
-						<p> Type of Assessment 
-								<input type="text" name="Assessment">
-								<input type="submit" value="Submit" >
-						</p>
-						<form> 
-							Weight: 
-							<input type="number" name="Grade" min="0" max="100">
-							<input type="submit" value="Submit" >
-						</form>
+				        <p> Type of Assessment 
+                             <input type="text" name="assessment">
+                        </p>
+                        <form> 
+                            Grade: 
+                            <input type="number" name="Grade" min="0" max="100">
+                            <input type="submit" value="Submit" >
+                        </form>
 												
 					
                 </div>

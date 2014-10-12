@@ -17,7 +17,6 @@ Route::get('/', function()
 });
 
 Route::get('/test', function(){
-
 });
 
 // Route::group(array('prefix' => 'settings', 'before' => 'auth'), function()

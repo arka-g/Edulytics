@@ -81,11 +81,11 @@
         </nav>
 
         <select>
-
+<!-- 
 	@foreach ($assessments as $assessment)
 	   <option value="{{$assessment->assessment_type}}">{{$assessment->assessment_type}}</option>
 	@endforeach
-		<option>2</option>
+		<option>2</option> -->
 	</select>
         <!-- Page Content -->
         <div id="page-wrapper">
@@ -99,11 +99,10 @@
 									<option value="{{$assessment->assessment_type}}">{{$assessment->assessment_type}}</option>
 								@endforeach
 							</select>
-							<input type="submit" value="Submit" >
 						</p>
 						<form> 
-							Grade: 
-							<input type="number" name="Grade" min="0" max="100">
+							Weight: 
+							<input type="number" name="weight" min="0" max="100">
 							<input type="submit" value="Submit" >
 						</form>
 					
