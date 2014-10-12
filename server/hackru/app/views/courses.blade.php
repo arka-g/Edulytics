@@ -1,8 +1,5 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -288,27 +285,37 @@
         </nav>
 
         <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Add a Course</h1>
 
-                        <p> Select a course: 
-                            <select>
-                                <option value="List of McMaster Courses">List of McMaster Courses</option>
-                            </select>
-                        </p>
-                </div>
-            
-            <div class = "col-lg-12">
-                <button type= "button">Add course</button>
-                    <div class = "form-horizontal" role = "form">
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+        <!-- Page Content -->
+       <div id="page-wrapper">
+           <div class="row">
+               <div class="col-lg-12">
+                {{ Form::open(array('url' => 'courses/save')) }}
+                   <h1 class="page-header">Add a Course</h1>
+                       <p> Select a course: 
+                        
+                           <select name="course">
+
+
+                               <option value="List of McMaster Courses">List of McMaster Courses</option>
+                               @foreach ($courses as $course)
+                                <option value="{{$course->id}}">{{$course->course_name}}</option>
+                               @endforeach
+                           </select>
+                       
+                       </p>
+                       <div class = "col-lg-12">
+               <input type= "submit">
+                   <div class = "form-horizontal" role = "form">
+                   </div>
+               </div>
+                {{ Form::close() }}
+               </div>
+           
+           
+           </div>
+           <!-- /.row -->
+       </div>
 
     </div>
     <!-- /#wrapper -->

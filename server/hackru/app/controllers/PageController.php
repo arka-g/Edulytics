@@ -2,85 +2,46 @@
 
 class PageController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /page
-	 *
-	 * @return Response
-	 */
-	public function index()
+	public function loadCourseSelection()
 	{
-		//
+		$courses = Course::all();
+		
+		return View::make('courses', array('courses' => $courses));
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /page/create
-	 *
-	 * @return Response
-	 */
-	public function create()
+	public function saveCourseSelection()
 	{
-		//
+		$input = Input::all();
+
+		$userCourse = new UserCourse;
+
+		$userCourse->course_id = $input['course'];
+		$userCourse->user_id = 1;
+
+		$userCourse->save();
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /page
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function d3Test()
 	{
-		//
+		return View::make('d3');
 	}
 
-	/**
-	 * Display the specified resource.
-	 * GET /page/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function loadCoursePage($course)
 	{
-		//
+		return $course;
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /page/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
+	public function addAssessment()
 	{
-		//
-	}
+		$input = Input::all();
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /page/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+		// $userAssessmentGrade = new UserAssessmentGrade;
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /page/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		// $userAssessmentGrade->assessment_id = 
+		// $userAssessmentGrade->mark = 
+		// $userAssessmentGrade->user_id = 
+
+		// $userAssessmentGrade->save();
 	}
 
 }
