@@ -80,22 +80,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
+                    <div class = "jumbotron">
                         {{ Form::open(array('url' => 'courses/save2')) }}
 
-                        <p> Type of Assessment 
-                            <select name="assessment">
+                        <p> Type of Assessment:  
+                            <select name="assessment " class = "select-custom">
                                 @foreach ($assessment as $assessments)
                                     {{$assessments}}
                                     <option value="{{$assessments->id}}">{{$assessments->assessment_type}}</option>
                                 @endforeach
                             </select>
                         </p>
-
+                        <p>
                             Grade: 
-                            <input type="text" name="mark" min="0" max="1">
-                            <input type="submit" value="Submit" >
+                            <input type="text" name="mark" min="0" max="1"><br><br>
+                            <input type="submit" class="btn btn-default dropdown-toggle" value="Submit" >
 				    {{ Form::close() }}
-
+                </p>
+</div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

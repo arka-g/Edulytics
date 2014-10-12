@@ -5,17 +5,58 @@
  */
 
 body {
-    background-color: #f8f8f8;
+    background-color: #9768D1;
+    color:#FFF;
+}
+.select-custom{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    font-size: 17px !important;
+}
+
+input{
+    color:black;
+}
+
+#weight{
+    margin-left:120px;
+}
+
+.well{
+    background-color: inherit;
+    height:300px;
+}
+.well ul li{
+    list-style-type: none;
+    padding:10px;
+    text-align: center;
+}
+
+.well ul li a{
+    list-style-type: none;
+    color:#FFF;
+/*    padding: 10px;
+*/}
+
+.well ul li a: hover{
+    color:#FFF;
+
 }
 
 #wrapper {
     width: 100%;
 }
+.jumbotron{
+    text-align: center !important;
+    background-color: inherit;
+}
 
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #fff;
+    background-color: #553285;
+
 }
 
 @media(min-width:768px) {
@@ -26,72 +67,25 @@ body {
         border-left: 1px solid #e7e7e7;
     }
 }
-
-.navbar-top-links li {
-    display: inline-block;
-}
-
-.navbar-top-links li:last-child {
-    margin-right: 15px;
-}
-
-.navbar-top-links li a {
-    padding: 15px;
-    min-height: 50px;
-}
-
-.navbar-top-links .dropdown-menu li {
-    display: block;
-}
-
-.navbar-top-links .dropdown-menu li:last-child {
-    margin-right: 0;
-}
-
-.navbar-top-links .dropdown-menu li a {
-    padding: 3px 20px;
-    min-height: 0;
-}
-
-.navbar-top-links .dropdown-menu li a div {
-    white-space: normal;
-}
-
-.navbar-top-links .dropdown-messages,
-.navbar-top-links .dropdown-tasks,
-.navbar-top-links .dropdown-alerts {
-    width: 310px;
-    min-width: 0;
-}
-
-.navbar-top-links .dropdown-messages {
-    margin-left: 5px;
-}
-
-.navbar-top-links .dropdown-tasks {
-    margin-left: -59px;
-}
-
-.navbar-top-links .dropdown-alerts {
-    margin-left: -123px;
-}
-
-.navbar-top-links .dropdown-user {
-    right: 0;
-    left: auto;
+.navbar-default{
+    background-color: #25064C;
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
+    background-color: #36175E;
 }
 
 .sidebar .sidebar-search {
     padding: 15px;
+    background-color: #7B52AB;
 }
 
 .sidebar ul li {
     border-bottom: 1px solid #e7e7e7;
+    background-color: #E74C3C;
+
 }
 
 .sidebar ul li a.active {

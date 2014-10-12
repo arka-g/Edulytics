@@ -47,6 +47,9 @@
   text-align: center;
 }
 
+.arc{
+  color:#fff;
+}
 /* Style northward tooltips differently */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
@@ -59,5 +62,5 @@
 }
 
 path:hover{
-  fill:brown;
+  fill:#FFF;
 }

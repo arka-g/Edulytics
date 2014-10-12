@@ -88,6 +88,10 @@ class PageController extends \BaseController {
 		return View::make('addassessmentpage', array('assessments' => $assessment,'course'=>$course));
 	}
 
+	public function loadCoursePieChart()
+	{
+		return View::make('pie');
+	}
 
 
 }

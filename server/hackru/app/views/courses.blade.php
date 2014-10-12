@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Add Courses</a>
+                <a class="navbar-brand" href='{{URL::action("courses")}}'>McMaster Student Hub</a>
             </div>
         
 
@@ -56,7 +56,7 @@
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
+                                <button class="btn btn-default dropdown-toggle" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
@@ -82,9 +82,10 @@
                <div class="col-lg-12">
                 {{ Form::open(array('url' => 'courses/save')) }}
                    <h1 class="page-header">Add a Course</h1>
+                   <div class = "jumbotron">
                        <p> Select a course: 
                         
-                           <select name="course">
+                           <select class = "select-custom" name="course">
 
                                <option value="List of McMaster Courses">List of McMaster Courses</option>
                                @foreach ($courses as $course)
@@ -92,12 +93,14 @@
                                @endforeach
                            </select>
                        
-                       </p>
-                       <div class = "col-lg-12">
-               <input type= "submit">
-                   <div class = "form-horizontal" role = "form">
+                       </p><br>  
+                <div class = "col-lg-12">
+                   <input type= "submit" class="btn btn-default dropdown-toggle" type="button">
+                       <div class = "form-horizontal" role = "form">
+                       </div>
                    </div>
-               </div>
+                </div>
+           
                 {{ Form::close() }}
                </div>
 
@@ -105,12 +108,16 @@
                     <h1 class = "page-header">Courses Added</h1>
                     <div class = "well">
                         <ul name = "user">
-                        @foreach($usercourse as $user)
-                            <li value = "{{$user->id}}">
-                                <a href = '/assessment/{{$user->course_id}}'>{{$user->course->course_name}}</a>
-                            </li>
-                        @endforeach
-                    </ul>
+                            <div class = "col-md-12">
+                            @foreach($usercourse as $user)
+                            <div class = "col-md-4">
+                                <li value = "{{$user->id}}">
+                                    <a href = '/assessment/{{$user->course_id}}'>{{$user->course->course_name}}</a>
+                                </li>
+                            </div>
+                            @endforeach
+                         </div>
+                        </ul>
                     </div>
                 </div> 
            

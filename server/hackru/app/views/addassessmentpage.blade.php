@@ -35,7 +35,7 @@
 
 <body>
 
-    <div id="wrapper">
+ <div id="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -46,9 +46,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Add Courses</a>
+                <a class="navbar-brand" href='{{URL::action("courses")}}'>McMaster Student Hub</a>
             </div>
-            <!-- /.navbar-header -->
+        
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -57,14 +57,15 @@
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
+                                <button class="btn btn-default dropdown-toggle" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
                             </div>
                             <!-- /input-group -->
                         </li>
-                         <li>
+
+                        <li>
                             <a class="active" href='{{URL::action("courses")}}'>Courses</a>
                         </li>
                     </ul>
@@ -73,28 +74,24 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-        <select>
-<!-- 
-	@foreach ($assessments as $assessment)
-	   <option value="{{$assessment->assessment_type}}">{{$assessment->assessment_type}}</option>
-	@endforeach
-		<option>2</option> -->
-	</select>
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
+                    <div class = "jumbotron">
 					{{ Form::open(array('url' => 'assessment/save1')) }}
                     <input type = "hidden" name="course" value = "{{$course}}">
-			             <p> Type of Assessment 
+			             <p> Type of Assessment:  
                              <input type="text" name="type">
                         </p>
-							Weight: 
+						<p id = "weight"> Weight: 
 							<input type="text" name="weight" min="0" max="1">
-							<input type="submit" value="Submit" >
+                        </p>
+
+							<input type="submit" class="btn btn-default dropdown-toggle" value="Submit" >
 					{{ Form::close() }}
+                </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -162,7 +159,7 @@
                   .attr("y", 6)
                   .attr("dy", ".71em")
                   .style("text-anchor", "end")
-                  .text("marks");
+                  .text("marks","font-color:#fff");
 
 
               svg.selectAll(".bar")
