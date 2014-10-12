@@ -88,4 +88,19 @@ class UserController extends \BaseController {
 		return User::find(1)->userAssessmentGrade()->get();
 	}
 
+	public function loadCourseMarkAndWeight()
+	{
+		// return UserAssessmentGrade::where('user_id', '=', 1)->get();
+
+		$relations = array(
+	    	'userAssessmentGrade',
+	    	'userInfo'
+	    );
+
+		$baseQuery = UserAssessmentGrade::with($relations)->where('user_id', '=', 1)->get();
+
+		return $baseQuery;
+
+	}
+
 }
