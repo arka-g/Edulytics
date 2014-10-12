@@ -291,10 +291,13 @@
        <div id="page-wrapper">
            <div class="row">
                <div class="col-lg-12">
+                {{ Form::open(array('url' => 'courses/save')) }}
                    <h1 class="page-header">Add a Course</h1>
                        <p> Select a course: 
                         
-                           <select>
+                           <select name="course">
+
+
                                <option value="List of McMaster Courses">List of McMaster Courses</option>
                                @foreach ($courses as $course)
                                 <option value="{{$course->id}}">{{$course->course_name}}</option>
@@ -302,13 +305,15 @@
                            </select>
                        
                        </p>
-               </div>
-           
-           <div class = "col-lg-12">
-               <button type= "button">Add course</button>
+                       <div class = "col-lg-12">
+               <input type= "submit">
                    <div class = "form-horizontal" role = "form">
                    </div>
                </div>
+                {{ Form::close() }}
+               </div>
+           
+           
            </div>
            <!-- /.row -->
        </div>
