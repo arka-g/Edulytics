@@ -32,7 +32,8 @@ class PageController extends \BaseController {
 
 	public function loadCoursePage($course)
 	{
-		return View::make('coursedetail', array('course' => $course));
+		$assessment = $this->loadAssessment($course);
+		return View::make('coursedetail', array('course' => $course, 'assessment' => $assessment));
 		return $course;
 	}
 
@@ -48,6 +49,8 @@ class PageController extends \BaseController {
 		$assessment->course_id = $input['course'];
 
 		$assessment->save();
+
+		return Redirect::to('/courses/'.$input['course'].'/grades');
 	}
 
 	public function loadAssessment($course)

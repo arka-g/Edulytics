@@ -98,7 +98,7 @@
                              <input type="text" name="type">
                         </p>
 							Weight: 
-							<input type="number" name="weight" min="0" max="1">
+							<input type="text" name="weight">
 							<input type="submit" value="Submit" >
 					{{ Form::close() }}
                 </div>

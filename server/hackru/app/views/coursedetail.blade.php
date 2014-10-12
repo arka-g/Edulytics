@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,19 +8,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>School Hub</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <!-- <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"> -->
+    <link href="/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <!-- <link href="css/sb-admin-2.css" rel="stylesheet"> -->
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -86,21 +85,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">User Profile</h1>
-					
+					{{ Form::open(array('url' => 'courses/save')) }}
                         <p> Type of Assessment 
                             <select>
-                                @foreach ($assessments as $assessment)
-                                    <option value="{{$assessment->assessment_type}}">{{$assessment->assessment_type}}</option>
+                                @foreach ($assessment as $assessments)
+                                    <option value="{{$assessments->assessment_type}}">{{$assessments->assessment_type}}</option>
                                 @endforeach
                             </select>
                         </p>
-                        <form> 
                             Grade: 
-                            <input type="number" name="Grade" min="0" max="100">
+                            <input type="text" name="Grade" min="0" max="100">
                             <input type="submit" value="Submit" >
-                        </form>
-												
-					
+				    {{ Form::close() }}
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
