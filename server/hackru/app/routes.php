@@ -53,6 +53,6 @@ Route::get('/markweight', array('uses' => 'UserController@loadCourseMarkAndWeigh
 // Route::get('/courses/{course}/grades', array('uses'=>'PageController@loadCoursePage'));
 // Route::post('/course/assessment/add', array('as' => 'assessment-add', 'uses' => 'PageController@'))
 
-
+Route::get('/piechart', array('uses' => 'UserController@loadCoursePieChart'));
 
 

@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <title>School Hub</title>
 
     <!-- Bootstrap Core CSS -->
@@ -90,7 +91,8 @@
                         <p> Type of Assessment 
                             <select name="assessment">
                                 @foreach ($assessment as $assessments)
-                                    <option value="{{$assessments->assessment_type}}">{{$assessments->assessment_type}}</option>
+                                    {{$assessments}}
+                                    <option value="{{$assessments->id}}">{{$assessments->assessment_type}}</option>
                                 @endforeach
                             </select>
                         </p>
@@ -104,6 +106,8 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+
+
         </div>
         <!-- /#page-wrapper -->
 

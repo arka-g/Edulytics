@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+        
 
     <title>School Hub</title>
 
@@ -62,15 +63,11 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-           <li>
+                        <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                         
                         <li>
-                            <a href="blank.html">Blank Page</a>
-                        </li>
-                        <li>
-                            <a class="active" href="courses.html">Courses</a>
+                            <a class="active" href='{{URL::action("courses")}}'>Courses</a>
                         </li>
                     </ul>
                 </div>
@@ -121,6 +118,13 @@
            
            </div>
            <!-- /.row -->
+
+
+
+             
+
+
+
        </div>
 
     </div>

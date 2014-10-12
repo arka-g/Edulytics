@@ -64,7 +64,7 @@ class PageController extends \BaseController {
 	public function addGrade()
 	{
 		$input = Input::all();
-
+		// return $input;
 		$userAssessmentGrade = new UserAssessmentGrade;
 
 		$userAssessmentGrade->assessment_id = $input['assessment'];
