@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>D3 Test</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/style.css">
     </head>
     <body>
         <div id = "chart"></div>
@@ -45,7 +45,7 @@
         
         svg.call(tip);
 
-        d3.json("http://localhost/server/hackru/public/markweight", function(json) {
+        d3.json("http://localhost:9999/markweight", function(json) {
     
             var data = json;
     
