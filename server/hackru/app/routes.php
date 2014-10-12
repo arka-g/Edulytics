@@ -36,7 +36,6 @@ Route::group(array('prefix' => 'settings'), function()
 
 Route::resource('photo', 'UserController');
 
-
 Route::group(array('prefix' => 'courses'), function()
 {
 	Route::get('/', array('as'=>'courses', 'uses'=>'PageController@loadCourseSelection'));
