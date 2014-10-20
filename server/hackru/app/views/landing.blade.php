@@ -8,7 +8,7 @@
     <meta content="" name="description">
     <meta content="" name="author">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Educalytics</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"><!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet"><!-- Custom Fonts -->
@@ -35,7 +35,7 @@
                     <div class="intro-message">
                         <h1>Student Hub</h1>
 
-                        <h3>An analytics grade tracking system</h3>
+                        <h3>Analytical grade tracking system</h3>
                         <hr class="intro-divider">
 
                         <div class="row">

@@ -84,9 +84,8 @@
                         {{ Form::open(array('url' => 'courses/save2')) }}
 
                         <p> Type of Assessment:  
-                            <select name="assessment " class = "select-custom">
+                            <select name="assessment" class = "select-custom">
                                 @foreach ($assessment as $assessments)
-                                    {{$assessments}}
                                     <option value="{{$assessments->id}}">{{$assessments->assessment_type}}</option>
                                 @endforeach
                             </select>
@@ -97,11 +96,12 @@
                             <input type="submit" class="btn btn-default dropdown-toggle" value="Submit" >
 				    {{ Form::close() }}
                 </p>
-</div>
+                    </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+
 
 
         </div>

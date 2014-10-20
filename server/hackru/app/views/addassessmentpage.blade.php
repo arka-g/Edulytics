@@ -98,6 +98,11 @@
             <!-- /.row -->
 
 
+
+
+            
+
+
             <div id = "chart"></div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
         <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>

@@ -120,15 +120,63 @@
                         </ul>
                     </div>
                 </div> 
+
+                <div class = "col-lg-12">
+                    <h1 class = "page-header">Pie Chart</h1>
+                    <div id = "piechart">
+                        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+
+                        <script>
+
+                        var width = 960,
+                            height = 500,
+                            radius = Math.min(width, height) / 2;
+
+                        var color = d3.scale.ordinal()
+                            .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+                        var arc = d3.svg.arc()
+                            .outerRadius(radius - 10)
+                            .innerRadius(0);
+
+                        var pie = d3.layout.pie()
+                            .sort(null)
+                            .value(function(d) { return d.user_assessment_grade.weight_percent; });
+
+                        // var svg = d3.select("#piechart")
+                        var svg = d3.select("body").append("svg")
+                            .attr("width", width)
+                            .attr("height", height)
+                          .append("g")
+                            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+                        d3.json("http://localhost:9999/markweight", function(json) {
+                          var data = json;
+                          data.forEach(function(d) {
+                            d.user_assessment_grade.weight_percent = +d.user_assessment_grade.weight_percent;
+                          });
+
+                          var g = svg.selectAll(".arc")
+                              .data(pie(data))
+                              .enter().append("g")
+                              .attr("class", "arc");
+
+                          g.append("path")
+                              .attr("d", arc)
+                              .style("fill", function(d) { return color(d.data.user_assessment_grade.assessment_type); });
+
+                          g.append("text")
+                              .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+                              .attr("dy", ".35em")
+                              .style("text-anchor", "middle")
+                              .text(function(d) { return d.data.user_assessment_grade.assessment_type; });
+
+                        });
+                        </script>
+                    </div>
+                </div>
            
            </div>
-           <!-- /.row -->
-
-
-
-             
-
-
 
        </div>
 
