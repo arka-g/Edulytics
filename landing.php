@@ -8,7 +8,7 @@
     <meta content="" name="description">
     <meta content="" name="author">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Live</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"><!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet"><!-- Custom Fonts -->
