@@ -1,0 +1,17 @@
+[
+    { 
+      "username":"kevin",
+      "test": "Midterm1",
+      "n": 25
+    },
+    {
+      "username":"k2in",
+      "test": "Midterm2",
+      "n": 25
+    },
+    {
+      "username":"3in",
+      "test": "Exam",
+      "n": 50
+    }
+]
