@@ -1,92 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app = "store">
     <head>
         <meta charset="utf-8">
         <title>D3 Test</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     </head>
     <body>
+       <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" >{{"Mcmaster" + "Student Hub"}}</a>
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+      </div>
+
+      <div class = "col-lg-12">
+        <div class = "container">
+        <div class = "col-lg-6"> 
         <div id = "chart"></div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-        <script>
-        var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;  
 
-        var x = d3.scale.ordinal()
-            .rangeRoundBands([0, width], .1);
-
-        var y = d3.scale.linear()
-            .range([height, 0]);
-
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
-
-        var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient("left")
-            .ticks(10, "%");
-
-
-        var tip = d3.tip()
-          .attr('class', 'd3-tip')
-          .offset([-10, 0])
-          .html(function(d) {
-            return "<strong>Mark:</strong> <span style='color:red'>" + d.mark +"%" + "</span>";
-          })
-
-        var svg = d3.select("#chart")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.left + margin.right)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        
-        svg.call(tip);
-
-        d3.json("/misc/data.json", function(json) {
-    
-            var data = json;
-    
-            x.domain(data.map(function(d) { return d.assessment_id; }));
-            y.domain([0, 100]);
-            //d3.max(data, function(d) { return d.mark; })
-    
-            // bars
-            svg.append("g")
-                .attr("class","x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
-
-              svg.append("g")
-                  .attr("class", "y axis")
-                  .call(yAxis)
-                  .append("text")
-                  .attr("transform", "rotate(-90)")
-                  .attr("y", 6)
-                  .attr("dy", ".71em")
-                  .style("text-anchor", "end")
-                  .text("marks");
+      </div>
+      <div class = "col-lg-6">
+         <div class="form-group">
+            <label class="control-label">Assessment</label>
+            <input type="text" class="form-control" name="email" />
+          </div>
+          <div class="form-group">
+            <label class="control-label">Mark</label>
+            <input type="text" class="form-control" name="email" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-label-left add-data">
+              <span><i class="fa fa-clock-o"></i></span>
+                Submit
+          </button>
+          <div ng-controller = "formController as form">
+            <h1> {{form.product.assessment_id}} </h1>
+            <h2> {{form.product.mark}} </h2>
+          </div>
 
 
-              svg.selectAll(".bar")
-                  .data(data)
-                  .enter().append("rect")
-                  .attr("class", "bar")
-
-                  .attr("x", function(d) { debugger;return x(d.assessment_id); })
-
-                  .attr("width", x.rangeBand())
-                  .attr("y", function(d) { return y(d.mark); })
-                  .attr("height", function(d) { return height - y(d.mark); })
-                  .on('mouseover', tip.show)
-            .on('mouseout', tip.hide);
-        });
-function type(d) {
-  d.mark = +d.mark;
-  return d;
-}
-        </script>
+        </div>
+      </div>
+      </div>
+      <script type="text/javascript" src ="js/angular.min.js"></script>
+      <script type="text/javascript" src = "js/app.js"></script>
+      <script type="text/javascript" src = "js/barchart.js"></script>
     </body>
 </html> 
