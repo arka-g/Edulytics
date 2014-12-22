@@ -80,4 +80,42 @@ class Users extends Controller with MongoController {
     }
   }
 
+  def createCourse = Action.async(parse.json) {
+    // val cursor: Cursor[User] = collection.find(Json.obj("firstName" -> "Kiri")).cursor[User]
+    // request.body.validate[User].map {
+    //     user =>
+    //     // `user` is an instance of the case class `models.User`
+    //       collection.update(user).map {
+    //         // lastError =>
+    //         //   logger.debug(s"Successfully inserted with LastError: $lastError")
+    //         //   Created(s"User Created")
+    //       }
+    //   }.getOrElse(Future.successful(BadRequest("invalid json")))
+
+    val course1 = Course("TEST", true)
+
+    collection
+
+  }
+
+//   def dostuff() = Action {
+//     implicit request =>
+//         form.bindFromRequest.fold(
+//             errors => BadRequest(views.html.invite(errors)),
+//             form => {
+//                 val objectsReadyForSave = createObjects(form.companyId, form.companyName, sms_pattern.findAllIn(form.phoneNumbers).toSet)
+//                 Async {
+//                     val operations = for {
+//                         data <- objectsReadyForSave
+//                     } yield collection.update(BSONDocument("cId" -> data.cId.get, "userId" -> data.userId.get), data, upsert = true)
+
+//                     Future.sequence(operations).map {
+//                         lastErrors =>
+//                             Ok("Documents probably inserted/updated!")
+//                     }
+//                 }
+//             }
+//         )
+// }
+
 }

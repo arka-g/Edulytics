@@ -3,6 +3,7 @@ package models
 case class User( age: Int,
                  firstName: String,
                  lastName: String,
+                 course: List[Course],
                  active: Boolean)
 
 object JsonFormats {
