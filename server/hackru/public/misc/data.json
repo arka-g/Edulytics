@@ -1,32 +1,27 @@
 [
     {
       "assessment_id":"kevin",
-      "mark": 60
+      "mark": 0.6
     },
     {
       "assessment_id":"ken",
-      "mark": 70
+      "mark": 0.5
     },
     {
       "assessment_id":"kn",
-      "mark": 80
+      "mark": 0.3
     },
     {
       "assessment_id":"k",
-      "mark": 90
+      "mark": 0.2
     },
     {
       "assessment_id":"kevidsadn",
-      "mark": 70
+      "mark": 0.6
     },
     {
       "assessment_id":"mark",
-      "mark": 30
-    },
-    {
-      "assessment_id":"in",
-      "mark": 40
+      "mark": 0.6
     }
-
 
 ]
