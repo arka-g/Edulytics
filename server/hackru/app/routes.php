@@ -56,3 +56,6 @@ Route::get('/markweight', array('uses' => 'UserController@loadCourseMarkAndWeigh
 Route::get('/piechart', array('uses' => 'PageController@loadCoursePieChart'));
 
 
+Route::get('/courselanding', function(){
+	return View::make('courselanding');
+});
