@@ -31,21 +31,21 @@
       </div>
       <div class = "col-lg-6" ng-app = "store">
          <div class="form-group">
-            <label class="control-label">Assessment</label>
-            <input type="text" class="form-control" name="email" />
+            <label class="control-label">Add Name</label>
+            <input type="text" class="form-control" name="add" />
           </div>
           <div class="form-group">
-            <label class="control-label">Mark</label>
-            <input type="text" class="form-control" name="email" />
+            <label class="control-label">Add Mark</label>
+            <input type="number" class="form-control" name="mark" />
           </div>
           <button type="submit" class="btn btn-primary btn-label-left add-data">
               <span><i class="fa fa-clock-o"></i></span>
                 Submit
           </button>
-          <div ng-controller = "formController as formto">
+     <!--      <div ng-controller = "formController as formto">
             <h1> {{formto.product.assessment_id}} </h1>
             <h2> {{formto.product.mark}} </h2>
-          </div>
+          </div> -->
 
 
         </div>
