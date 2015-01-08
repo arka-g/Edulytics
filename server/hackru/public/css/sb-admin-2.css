@@ -5,7 +5,7 @@
  */
 
 body {
-    background-color: #9768D1;
+    background-color: #31353D;
     color:#FFF;
 }
 .select-custom{
@@ -58,7 +58,7 @@ input{
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #553285;
+    background-color: #445878;
 
 }
 
@@ -71,18 +71,18 @@ input{
     }
 }
 .navbar-default{
-    background-color: #25064C;
+    background-color: #1C1D21;
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
-    background-color: #36175E;
+    background-color: #31353D;
 }
 
 .sidebar .sidebar-search {
     padding: 15px;
-    background-color: #7B52AB;
+    background-color: #31353D;
 }
 
 .sidebar ul li {
