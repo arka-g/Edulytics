@@ -106,7 +106,20 @@
                <div class = "col-lg-12">
                   <h1 class = "page-header">Pie Chart</h1>
                   <div id = "piechart">
-                     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- /#wrapper -->
+      <!-- jQuery Version 1.11.0 -->
+      <script src="js/jquery-1.11.0.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Custom Theme JavaScript -->
+      <script src="js/sb-admin-2.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
                      <script>
                         var width = 960,
                             height = 500,
@@ -153,17 +166,5 @@
                         
                         });
                      </script>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- /#wrapper -->
-      <!-- jQuery Version 1.11.0 -->
-      <script src="js/jquery-1.11.0.js"></script>
-      <!-- Bootstrap Core JavaScript -->
-      <script src="js/bootstrap.min.js"></script>
-      <!-- Custom Theme JavaScript -->
-      <script src="js/sb-admin-2.js"></script>
    </body>
 </html>
