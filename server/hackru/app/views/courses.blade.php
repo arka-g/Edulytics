@@ -82,6 +82,12 @@
                <div class="col-lg-12">
                 {{ Form::open(array('url' => 'courses/save')) }}
                    <h1 class="page-header">Add a Course</h1>
+
+                   <h1>Hey man, you're logged in!</h1>
+               
+                         <h4>Your email is {{Auth::user()->email}}</h4>
+                    <h5>Your first name is {{Auth::user()->first_name}}</h5>
+                    <h5>Your last name is {{Auth::user()->last_name}}</h5>
                    <div class = "jumbotron">
                        <p> Select a course: 
                         

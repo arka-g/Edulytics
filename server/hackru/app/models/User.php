@@ -9,6 +9,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
+	 public $timestamps = false;
+
+
 	/**
 	 * The database table used by the model.
 	 *
@@ -27,5 +30,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     {
         return $this->hasMany('UserAssessmentGrade');
     }
+    public function setPasswordAttribute($value)
+	{
+	    $this->attributes['password'] = Hash::make($value);
+	}
 
 }

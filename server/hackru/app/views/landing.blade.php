@@ -47,37 +47,17 @@
                                 <div class="col-md-4">
                                     <div class="col-md-12">
                                         <div class="panel-body">
-                                            <form>
-                                                <fieldset>
-                                                    <div class="form-group">
-                                                        <input autofocus=""
-                                                        class="form-control"
-                                                        name="email"
-                                                        placeholder="E-mail"
-                                                        type="email">
-                                                    </div>
+                                        {{ Form::open(array('url' => 'login')) }}
+                                            <p>
+                                            Email: {{ Form::text('email') }}
+                                        </p>
+                                        <p>
+                                            Password: {{ Form::text('password') }}
+                                        </p>
+                                                        <p>{{ Form::submit('Submit!') }}</p>
 
-                                                    <div class="form-group">
-                                                        <input class=
-                                                        "form-control" name=
-                                                        "password" placeholder=
-                                                        "Password" type=
-                                                        "password" value="">
-                                                    </div>
+                                        {{ Form::close() }}
 
-                                                    <div class="checkbox">
-                                                        <label><input name=
-                                                        "remember" type=
-                                                        "checkbox" value=
-                                                        "Remember Me">Remember
-                                                        Me</label>
-                                                    </div>
-                                                    <!-- Change this to a button or input when using this as a form -->
-                                                    <a class=
-                                                    "btn btn-lg btn-success btn-block"
-                                                    href='{{URL::action("courses")}}'>Login</a>
-                                                </fieldset>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -90,17 +70,9 @@
 
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a class="btn btn-default btn-lg" href=
-                                "signup.html"><i class=
+                                <a class="btn btn-default btn-lg" href='{{URL::to("/signup")}}'><i class=
                                 "fa fa-plus-square fa-fw"></i> <span class=
                                 "network-name">Sign-Up</span></a>
-                            </li>
-
-                            <li>
-                                <a class="btn btn-default btn-lg fb" href=
-                                "#"><i class="fa fa-facebook fa-fw"></i>
-                                <span class="network-name">Login with
-                                Facebook</span></a>
                             </li>
                         </ul>
                     </div>

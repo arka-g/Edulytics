@@ -55,7 +55,9 @@ Route::get('/markweight', array('uses' => 'UserController@loadCourseMarkAndWeigh
 
 Route::get('/piechart', array('uses' => 'PageController@loadCoursePieChart'));
 
-
+Route::get('/signup', array('uses'=>'PageController@signUp'));
+Route::post('/signupPost', array('uses'=>'PageController@addUser'));
+Route::post('/login', array('uses'=>'PageController@auth'));
 Route::get('/courselanding', function(){
 	return View::make('courselanding');
 });

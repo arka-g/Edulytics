@@ -93,5 +93,59 @@ class PageController extends \BaseController {
 		return View::make('pie');
 	}
 
+	public function signUp(){
+		return View::make('signup');
+	}
+
+	public function addUser(){
+		$input = Input::all();
+		// return $input;
+		$users = New User;
+		$users->first_name = $input['firstname'];
+		$users->last_name = $input['lastname'];
+		$users->email = $input['email'];
+		$users->password = $input['password'];
+		$users->school = $input['school'];
+
+		$users->save();
+
+		return Redirect::to('/');
+
+	}
+
+	public function auth(){
+		//must be valid email and password required
+		$rules = array(
+			'email' => 'required',
+			'password' => 'required'
+			);
+
+		//run validator rules on the inputs
+		$validator = Validator::make(Input::all(),$rules);
+
+		if($validator->fails()){
+			//if not valid
+			
+		} 
+		else{
+			//get userdata for login
+			$userdata = array(
+				'email'=>Input::get('email'),
+				'password'=>Input::get('password')
+				);
+			if(Auth::attempt($userdata)){
+				return Redirect::to('/courses');
+
+				// return Response::json(['status'=>200]);
+			}
+			else{
+				//validation failed
+				return Redirect::to('/signup');
+				// return Response::json(['status'=>400]);
+
+			}
+		}
+	}
+
 
 }
