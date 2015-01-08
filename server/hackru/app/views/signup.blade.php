@@ -26,17 +26,6 @@
 					{{ Form::text('password') }}
 				</p>
 
-				<!--test-->
-				<!--<p>
-					{{ Form::label('first_name', 'First Name') }}
-					{{ Form::text('first_name') }}
-				</p>
-
-				<p>
-					{{ Form::label('last_name', 'Last Name') }}
-					{{ Form::text('last_name') }}
-				</p> -->
-
 				<p>{{ Form::submit('Submit!') }}</p>
 			{{ Form::close() }}
 

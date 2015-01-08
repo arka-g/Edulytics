@@ -116,7 +116,7 @@ class PageController extends \BaseController {
 	public function auth(){
 		//must be valid email and password required
 		$rules = array(
-			'email' => 'required',
+			'email' => 'required|email',
 			'password' => 'required'
 			);
 
@@ -125,7 +125,7 @@ class PageController extends \BaseController {
 
 		if($validator->fails()){
 			//if not valid
-			
+			return Redirect::to('/')->withErrors($validator);
 		} 
 		else{
 			//get userdata for login
@@ -135,12 +135,10 @@ class PageController extends \BaseController {
 				);
 			if(Auth::attempt($userdata)){
 				return Redirect::to('/courses');
-
-				// return Response::json(['status'=>200]);
 			}
 			else{
 				//validation failed
-				return Redirect::to('/signup');
+				return Redirect::to('/');
 				// return Response::json(['status'=>400]);
 
 			}
