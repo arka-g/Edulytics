@@ -137,7 +137,7 @@
                             .value(function(d) { return d.user_assessment_grade.weight_percent; });
                         
                         // var svg = d3.select("#piechart")
-                        var svg = d3.select("body").append("svg")
+                        var svg = d3.select("#piechart").append("svg")
                             .attr("width", width)
                             .attr("height", height)
                           .append("g")
